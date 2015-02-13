@@ -84,14 +84,14 @@
 
 
 
-function Person(name,age,job){
-	this.name = name;
-	this.age = age;
-	this.job = job;
-	this.sayName = function(){
-		console.log(name);
-	}
-}
+// function Person(name,age,job){
+// 	this.name = name;
+// 	this.age = age;
+// 	this.job = job;
+// 	this.sayName = function(){
+// 		console.log(name);
+// 	}
+// }
 
 // var person1 = new Person("Nicholas",29,"Software Engineer");
 // var person2 = new Person("Greg",27,"Doctor");
@@ -112,13 +112,69 @@ function Person(name,age,job){
 // Person("xiao",21,"Software");
 // window.sayName();
 
-var o = new Object();
-Person.call(o,"Kristen",25,"Doctor");
-o.sayName();
+// var o = new Object();
+// Person.call(o,"Kristen",25,"Doctor");
+// o.sayName();
+
+
+function Person(1,2,3,4){
+	argument: arguments.length
+};
+var friend = new Person;
+
+// Person.prototype = {   //这是重写了整个原型
+// 	constrctor : Person,
+// 	name : "Nicholas",
+// 	age : 29,
+// 	job : "Software",
+// }
+
+Person.prototype.name = "Nicholas";
+Person.prototype.age = 21;
+Person.prototype.sayName = function(){
+	console.log(this.name)
+}
 
 
 
+// var person1 = new Person();
+// // var person2 = new Person();
+// person1.name = "xiao";
+// person1.age = 30;
+// console.log(person1.name);
 
+// delete person1.name;
+// console.log(person1.name);
+// person1.name = "xiao";
+// person1.sayHi = function(){
+// 	console.log("Hihi")
+// }
+// person1.sayHi();
+// console.log(person1.name);
+// console.log(person2.name);
+// person2.sayHi();
+
+// for(var prop in person1){
+// 	console.log(prop)
+// }
+// console.log(hasPrototypeProperty(person1,"name"))
+// for(var prop in person1){
+// 	console.log(prop)
+// }
+
+// var person1keys = Object.keys(person1);
+// console.log(person1keys);
+
+// var friend = new Person();
+// Person.prototype.sayHi = function(){
+// 	console.log("hi");
+// };
+// friend.sayHi();
+// for(var prop in friend){
+// 	console.log(friend[prop])
+// }
+
+// console.log(friend.name)
 
 
 
