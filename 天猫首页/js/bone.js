@@ -213,7 +213,7 @@ window.onload = function(){
 			// console.log("lf2" +":"+lf2);
 			lf2-=100;
 			// console.log(time);
-			console.log(lf2);
+			// console.log(lf2);
 			if(lf2 == (-300)){
 				circle_play_ul.style.left = "0";
 				lf2 = -100;
@@ -278,6 +278,19 @@ var hotbrand_nav = getClass(hotbrand_head,"ul","nav")[0];
 var hotbrand_nav_li = hotbrand_nav.getElementsByTagName("li");
 var brand_show_box = getClass(document,"div","brand-show-box")[0];
 var brand_show_box_item = brand_show_box.getElementsByTagName("ul");
+var brand_show_box_item_li;
+brand_show_box_item_li = brand_show_box.getElementsByTagName("li");
+// console.log(brand_show_box_item_li);
+for(var i=0;i<brand_show_box_item_li.length;i++){
+	brand_show_box_item_li[i].index = i;
+	brand_show_box_item_li[i].onmouseover = function(){
+		getClass(brand_show_box_item_li[this.index],"span","like")[0].style.display = "block";
+	}
+	brand_show_box_item_li[i].onmouseout = function(){
+		getClass(brand_show_box_item_li[this.index],"span","like")[0].style.display = "none";
+	}
+}
+
 for(var i =0; i<hotbrand_nav_li.length;i++){
 	hotbrand_nav_li[i].index = i;
 	hotbrand_nav_li[i].onclick = function(){
@@ -294,10 +307,12 @@ for(var i =0; i<hotbrand_nav_li.length;i++){
 var change = getClass(hotbrand_content,"a","change")[0];
 change.onclick = function(){
 	var num = selectFrom(0,3);
+	// console.log(num);
 	for(var i =0;i<brand_show_box_item.length;i++){
 		brand_show_box_item[i].style.display = "none";
 	}
 	brand_show_box_item[num].style.display = "block";
+	// console.log(1);
 }
 
 //图片的展开
