@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>time</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	#clock { position: absolute;}
+</style>
+</head>
+<body>
+    <h2>canvas 挂钟</h2>
+    <canvas id="clock" width="500" height="500" drag="true">
+    	不支持canvas
+    </canvas>
+<script src="js/jquery-1.10.2.js"></script>
+<script>
+	function canvasFun(){
+		var clock = document.getElementById("clock");
+		var cxt = clock.getContext("2d");
+		// var img = new Image();
+		// img.src= "brand_sentian.png";
+		// cxt.drawImage(img,0,0)；
+
+
+
+		// var canvas = document.getElementById('clock');
+		// var ctx = canvas.getContext("2d");
+		// var img = new Image();
+		// img.src="brand_sentian.png";
+		// ctx.drawImage(img,0,0);
+
+
+		
+
+
+
+
+		globalCompositeOperation = "source-over";
+		var now1 = new Date();
+
+		var bk = "#FE9901"; //表框
+		var sk = "#0065C9"; //时刻度
+		var fk = "#0265CB"; //分刻度
+
+
+		var sz = "#373791"; //时针
+		var fz = "#333192"; //分针
+		var mz = "#C8C623"; //秒针
+
+		var mh = "#FF0033";//秒针后小圆点
+		var mq = "#FF0033";//秒针前小圆点
+
+
+
+		// var mh = "#FF0033";//秒针后小圆点
+
+		// var mq = "#FF0033";//秒针前小圆点
+
+
+		cxt.clearRect(0,0,500,500);
+
+		var now = new Date();
+		var msec = now.getMilliseconds();
+		var sec = now.getSeconds();
+		var min = now.getMinutes();
+		var hour = now.getHours();
+
+
+		hour = hour + min/60;
+
+		hour>12?hour=hour-12:hour=hour;//转换为24小时进制
+		sec = sec + msec/1000;
+
+		// 设置表盘
+
+		var bbp = cxt.createRadialGradient(250,250,0,250,250,250);//表盘上的渐变
+		bbp.addColorStop(0.4,"#fff");
+		bbp.addColorStop(1,"#ffcc00");
+
+		cxt.lineWidth = 12;//外框
+		cxt.strokeStyle = bk;
+		cxt.fillStyle = bbp;
+
+		cxt.beginPath();
+
+		cxt.arc(250,250,200,0,360,false);
+
+		cxt.closePath();
+
+		cxt.stroke();//描边和填充都需要
+		cxt.fill();
+
+		//时刻度
+		// for( var i =0;i<12;i++){
+		// 	cxt.save();
+		// 	cxt.lineWidth = 7;
+		// 	cxt.strokeStyle = sk;
+		// 	cxt.translate(250,250);
+		// 	cxt.rotate(i*30*Math.PI/180);
+		// 	cxt.beginPath();
+		// 	cxt.moveTo(0,-170);
+		// 	cxt.lineTo(0,-190);
+		// 	cxt.closePath();
+		// 	cxt.stroke();
+		// 	cxt.restore();
+		// }
+
+
+		//时刻度
+		for(var i =0;i<12;i++){
+			cxt.save();//存储当前状态
+			cxt.lineWidth = 7;//线的宽度
+			cxt.strokeStyle = sk;
+			cxt.translate(250,250);//定画布中心
+			cxt.rotate(i*30*Math.PI/180);//画布的旋转
+
+			cxt.beginPath();
+			cxt.moveTo(0,-170);
+			cxt.lineTo(0,-190);
+			cxt.closePath();
+
+			cxt.stroke();
+			cxt.restore();//取出之前的状态
+		}
+
+
+		//分刻度
+		for(var i=0;i<60;i++){
+			cxt.save();
+			cxt.lineWidth = 5;
+			cxt.strokeStyle = fk;
+			cxt.translate(250,250);
+			cxt.rotate(i*6*Math.PI/180);
+
+			cxt.beginPath();
+			cxt.moveTo(0,-180);
+			cxt.lineTo(0,-190);
+			cxt.closePath();
+
+			cxt.stroke();
+			cxt.restore();
+		}
+
+
+
+
+		// 时针
+		cxt.save();
+		cxt.strokeStyle = sz;
+		cxt.lineWidth = 7;
+		cxt.translate(250,250);
+		cxt.rotate(hour*30*Math.PI/180)
+		cxt.beginPath();
+		cxt.moveTo(0,-110);
+		cxt.lineTo(0,10);
+		cxt.closePath();
+		cxt.stroke();
+		// console.log(cxt.isPointInPath(309,194));
+		clock.addEventListener('click',function(e){
+			p = getEventPosition(e);
+			console.log(p);
+			if(cxt.isPointInPath(p.x,p.y)){
+				console.log('已经点击啦canvas元素')
+			}
+		},false);
+		cxt.restore();
+
+
+		//分针
+		cxt.save();
+		cxt.strokeStyle = fz;
+		cxt.lineWidth = 5;
+		cxt.translate(250,250);
+		cxt.rotate(min*2*Math.PI/60);
+		cxt.beginPath();
+		cxt.moveTo(0,-140);
+		cxt.lineTo(0,15);
+		cxt.closePath();
+		cxt.stroke();
+		cxt.restore();
+
+
+
+		//秒针
+		cxt.save();
+		cxt.strokeStyle = mz;
+		cxt.lineWidth = 3;
+		cxt.translate(250,250);
+		cxt.rotate(sec*2*Math.PI/60);
+		cxt.beginPath();
+		cxt.moveTo(0,-170);
+		cxt.lineTo(0,20);
+		cxt.closePath();
+		cxt.stroke();
+
+		cxt.beginPath();
+		cxt.arc(0,0,5,0,360,false);
+		cxt.closePath();
+
+		cxt.fillStyle = mh;
+		cxt.fill()
+
+
+		cxt.restore();
+
+
+
+
+		//中间的圆心
+	 	cxt.fillStyle = mh;
+		cxt.beginPath();
+		cxt.arc(250,250,4,0,360,false);
+		cxt.closePath();
+		cxt.fill();
+
+		
+
+
+
+
+
+	}
+	function getEventPosition(ev){
+		var x,y;
+		if(ev.layerX||ev.layerX==0){
+			x = ev.layerX;
+			y = ev.layerY; 
+		}else if(ev.offsetX||ev.offsetX ==0){
+			x =ev.offsetX;
+			y =ev.offsetY;
+		}
+		return { x:x,y:y};
+	}
+
+
+	window.onload = function(){
+		canvasFun();
+		// setInterval(canvasFun,1);
+
+	}
+
+
+	
+
+
+
+
+</script>
+</body>
+</html>
