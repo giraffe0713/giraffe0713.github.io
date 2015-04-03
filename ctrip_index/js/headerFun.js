@@ -14,10 +14,12 @@ define(function(){
 		    var mobile_box = getClass("div","mobile-box")[0];
 		    var close = getClass("a",'close')[0];
 		    mobile_link.onmouseover = function(){
+		    	myctrip_body.style.display = "none";
 		    	mobile_box.style.display = "block";
 		    }
 		    mobile_box.onmouseover = function(){
 		    	// console.log(1);
+		    	myctrip_body.style.display = "none";
 		    	mobile_box.style.display = "block";
 		    }
 		    mobile_box.onmouseout = function(){
@@ -33,8 +35,10 @@ define(function(){
 		    var myctrip_body = getClass("div","myctrip-body")[0];
 		    myctrip_head.onmouseover = function(){
 		    	myctrip_body.style.display = "block";
+		    	mobile_box.style.display = "none";
 		    }
 		    myctrip_body.onmouseover = function(){
+		    	mobile_box.style.display = "none";
 		    	myctrip_body.style.display = "block";
 		    }
 		    myctrip_body.onmouseout = function(){

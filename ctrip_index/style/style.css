@@ -69,7 +69,7 @@ a { color: #4C4C4C;}
 .nav-tit .separator { float: left; font-size: 14px; line-height: 40px; color: #1D67DD;}
 .nav-tit-item { display: inline-block; *display: inline; *zoom: 1; padding: 3px 10px; color: #fff;}
 .nav-tit-list-curr .nav-tit-item { padding: 0 10px 3px 10px; background: #fff; color: #0066CC; border-top: 3px solid #FF9915;}
-.nav-con { display: none; position: absolute; left: 0; top: 40px; padding: 0 30px; width: 1120px; height: 40px; margin-left: -3px; line-height: 40px; font-size: 14px; border: 1px solid #bbb; border-top: 0 none;}
+.nav-con { display: none; position: absolute; left: 0; top: 40px; padding: 0 30px; width: 1120px; height: 37px; margin-left: -3px; line-height: 40px; font-size: 14px; border: 1px solid #bbb; border-top: 0 none; z-index: 1; background: #fff;}
 .myctrip { position: relative; float: right;}
 .myctrip-head { position: relative; width: 125px; padding: 0 5px 0 35px; background: #FF9913; color: #fff; line-height: 20px; cursor: pointer;}
 .per_icon { position: absolute; left: 7px; top: 10px; width: 22px; height: 22px; background: #fff;}
@@ -82,3 +82,18 @@ a { color: #4C4C4C;}
 .myctrip-body ul li { height: 26px;line-height: 26px;}
 .myctrip-body ul li a { color: #0066CC;}
 .myctrip-body ul.last { border-bottom: 0 none;}
+
+
+
+.panel { width: 1180px; margin: 0 auto; height: 500px;}
+.inte-travel { padding: 10px 0; line-height: 22px; color: #666666;}
+.inte-travel .tit { display: inline-block; *display: inline; *zoom: 1; width: 95px; height: 22px; margin-right: 25px; background-color: #74A8ED; color: #fff; text-align: center; }
+.inte-travel .con { margin-right: 20px;}
+.inte-travel .con .icon1 { display: inline-block; *display: inline; *zoom: 1; width: 25px; height: 5px;}
+
+.search-frame { width: 566px; height: 286px; padding: 7px; border-radius: 10px; background: #3983E5;}
+.search-box { width: 566px; height: 286px; border-radius: 7px; background: #fff;}
+.search-tit { float: left; height: 286px; background: #ECF4FC;}
+.search-tit li { width: 74px; height: 38px; cursor: pointer; font-size: 16px; line-height: 38px; text-align: center; background: #ECF4FC; border-top: 1px solid #fff; border-bottom: 1px solid #AECEF6;}
+.search-tit li.curr { background: #fff; width: 77px; color: #06c; box-shadow: -2px -4px 4px -4px #b7c9e0,-2px 4px 4px -4px #b7c9e0}
+.search-con { float: right;}
