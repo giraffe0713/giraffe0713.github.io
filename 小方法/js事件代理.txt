@@ -1,0 +1,5 @@
+function getEventTag(event){
+        return event.target || event.srcElement;
+    }
+
+var target = getEventTag(event);

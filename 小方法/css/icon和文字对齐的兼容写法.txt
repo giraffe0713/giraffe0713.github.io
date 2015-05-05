@@ -1,0 +1,3 @@
+.btn { margin: 20px auto; width: 141px; height: 43px;line-height: 42px; border: 1px solid #000; }
+.icon { display: inline-block; *display: inline; *zoom: 1; width: 16px; height: 16px; background: url(s_mod5_icon.jpg) 0 0 no-repeat; vertical-align: middle;overflow:hidden;}
+.txt { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle;}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="style/style.css" rel="stylesheet">
+<link href="style/reset.css" rel="stylesheet">
+<link href="style/clearfix.css" rel="stylesheet">
+</head>
+<body>
+	<div class="page">
+		<div class="header">
+			<a href="javascript:;" class="c-logo"></a>
+			<div class="search">
+				<input type="text" class="search-input" placeholder="春季旅游节抄底价"><a href="javascript:;" class="search-btn"></a>
+			</div>
+			<div class="nav-bar">
+				<ul class="other-lang">
+					<li class="lang-head">
+						<a href="javascript:;" class="lang-head-box">
+							<span class="lang-head-span">
+								<i class="icon icon-en"></i><span class="txt">English</span><b class="icon icon-arrow"></b>
+							</span>
+						</a>
+						<div class="other-lang-box">
+						<ul class="lang-list">
+							<li class="first"><a href="javascript:;" class="icon icon-ch"></a></li>
+							<li><a href="javascript:;" class="icon icon-ch"></a></li>
+							<li><a href="javascript:;" class="icon icon-ch"></a></li>
+							<li><a href="javascript:;" class="icon icon-ch"></a></li>
+							<li><a href="javascript:;" class="icon icon-ch"></a></li>
+							<li class="last"><a href="javascript:;" class="icon icon-ch"></a></li>
+						</ul>
+					</div>
+					</li>
+				</ul>
+				<ul class="callcenter"><li class="txt"><a href="javascript:;">客服中心</a></li></ul>
+				<ul class="service"><li class="txt">国内：<a href="javascript:;" class="mobile-num">1010-6666</a><b class="icon icon-arrow"></b></li></ul>
+				<ul class="mobile">
+					<li>
+						<a href="javascript:;" class="mobile-link"></a>
+						<b class="icon icon-arrow"></b>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<script>
+	function getClass(tagName,className){
+		var arr=[];
+		var result=[];
+		arr = document.getElementsByTagName(tagName);
+		for(var i =0;i<arr.length;i++){
+			if(arr[i].className.indexOf(className)!=-1){
+				result.push(arr[i]);
+			}
+		}
+		return result;
+	}
+	var other_lang = getClass("ul","other-lang");
+	other_lang[0].onmouseover = function(){
+		this.className = "other-lang other-lang-curr";
+	}
+	other_lang[0].onmouseout = function(){
+		this.className = "other-lang";
+	}
+</script>
+</body>
+</html>

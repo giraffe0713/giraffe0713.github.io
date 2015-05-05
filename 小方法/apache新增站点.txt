@@ -1,0 +1,7 @@
+Alias /Appserve/ "D:/Users/xiao_x/Appserve/" 
+<Directory "D:/Users/xiao_x/Appserve/">
+   Options Indexes MultiViews 
+   AllowOverride All 
+   Order allow,deny 
+   Allow from all 
+</Directory>

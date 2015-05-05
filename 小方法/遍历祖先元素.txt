@@ -1,0 +1,6 @@
+var x = document.getElementById('by-email');
+var result = []
+while (x.tagName != 'BODY') {
+  result.push(x);
+  x = x.parentNode;
+}

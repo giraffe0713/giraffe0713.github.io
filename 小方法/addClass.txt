@@ -1,0 +1,4 @@
+function addClass(ele,new_class){
+		var the_class = ele.className;
+		ele.className = the_class + " " + new_class;
+	}
