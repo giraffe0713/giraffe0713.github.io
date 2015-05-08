@@ -1,6 +1,5 @@
 .slider-container {
-  width: 80%;
-  margin: 50px auto;
+  margin: 80px auto;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .slider-container .back-bar {
@@ -25,12 +24,27 @@
 }
 .slider-container .back-bar .pointer-label {
   position: absolute;
-  padding: 5px 10px;
-  top: -27px;
-  font-size: 12px;
+  padding: 5px 15px;
+  margin-left: -15px;
+  top: -40px;
+  font-size: 14px;
   background: #D9DCE1;
   white-space: nowrap;
   line-height: 1;
+  border-radius: 3px;
+  font-family: arial;
+}
+.slider-container .back-bar .pointer-label:before {
+	content: "";
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	margin-left: -6px;
+	width: 0;
+	height: 0;;
+	border-width: 6px 6px 6px 6px;
+	border-style: solid dashed dashed dashed;
+	border-color: #D9DCE1 transparent transparent transparent;
 }
 .slider-container .back-bar .focused {
   z-index: 10;
@@ -88,10 +102,10 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffeeeeee', endColorstr='#ffdddddd', GradientType=0);
 }
 .theme-green .back-bar .pointer-label {
-  color: #999;
+  color: #fff;
 }
 .theme-green .back-bar .focused {
-  color: #333;
+  color: #fff;
 }
 .theme-green .scale span {
   border-left: 1px solid #e5e5e5;
