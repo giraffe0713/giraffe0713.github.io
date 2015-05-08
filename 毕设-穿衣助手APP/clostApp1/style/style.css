@@ -242,14 +242,15 @@ ul.layer_con>li:nth-child(4) span::before { background-color: rgba(190,121,203,.
 
 /*page13*/
 .page_userdefine { position: relative; height: 100%;}
-.page_userdefine .con { height: 78.5%;}
+.page_userdefine .con { height: 81%;}
 .page_userdefine .head a { width: 50px; height: 30px; color: #fff; font-size: 12px;}
 .page_userdefine .head .fl { margin-left: 10px;}
 .page_userdefine .head .fr { margin-right: 10px;}
-.page_userdefine .define_head { background: rgba(0,0,0,.1); width: 100%; height: 36px; line-height: 36px; overflow: hidden; margin-bottom: 5px;} 
-.page_userdefine .define_head a { display: inline-block; width: 60px; color: #fff; text-align: center;}
-.page_userdefine .define_head .curr { position: relative;}
-.page_userdefine .define_head .curr:after {
+.page_userdefine .define_head { background: rgba(0,0,0,.1); width:; height: 36px; line-height: 36px; margin-bottom: 5px;}
+.page_userdefine .define_head .swiper-wrapper { overflow-x: visible}
+.page_userdefine .define_head a { display: inline-block; width: 60px;  color: #fff; text-align: center; }
+.page_userdefine .define_head .active { position: relative;}
+.page_userdefine .define_head .active:after {
 	position: absolute;
 	content: "";
 	left: 50%;
@@ -261,8 +262,9 @@ ul.layer_con>li:nth-child(4) span::before { background-color: rgba(190,121,203,.
     border-style: dashed dashed solid dashed;
     border-color: transparent transparent #EDE5EA transparent;
 }
-.page_userdefine .define_con { padding: 5px 0 5px 5px;}
-.page_userdefine .define_con .item img { width: 31.3%; margin-right: 2%; margin-bottom: 3px;}
+.page_userdefine .define_con { max-height: 86%; overflow-y: scroll;}
+.page_userdefine .define_con .item { height: auto;}
+.page_userdefine .define_con .item img { max-width: 100%; margin-right: 2%; margin-bottom: 3px;}
 .page_userdefine .edit { position: fixed; bottom: 0; width: 100%; padding: 10px 5px 5px 10px ; background: rgba(153,153,153,.8); overflow: hidden; z-index: 10;}
 .page_userdefine .edit_box { width: 9999px;}
 .page_userdefine .edit_item { position: relative;  margin-right: 5px; float: left;}
