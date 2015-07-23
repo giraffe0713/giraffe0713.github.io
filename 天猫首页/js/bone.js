@@ -162,15 +162,6 @@ window.onload = function(){
 	var autoPlay_timer2;
 
 
-	// banner_box.onmouseover = function(){
-	// 	nav_ver_con.style.display = "block";
-	// }
-	// banner_box.onmouseout = function(){
-	// 	moveMessage(nav_ver_con,180,0,10);
-	// 	changeOpacity(nav_ver_con);
-	// 	nav_ver_con.style.display = "none";
-	// }
-
 
 	// banner自动轮播
 	function autoPlay(arr){
