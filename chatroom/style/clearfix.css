@@ -1,9 +1,0 @@
-.clearfix:after{
-	content: "";
-	display: table;
-	height: 0;
-	visibility: visible;
-	overflow: hidden;
-	clear: both;
-}
-.clearfix { *zoom: 1;}

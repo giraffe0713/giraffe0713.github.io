@@ -1,0 +1,15 @@
+html,body,div,p,h1,h2,h3,h4,h5,h6,a,span,strong,small,i,ul,ol,dd,dl,dt,li,img,table,tr,th,td { margin: 0; padding: 0;}
+body { color: #333; font-size: 12px; line-height: 1.5; font-family: Verdana, Geneva, sans-serif; letter-spacing: 1px;}
+a { color: #333; text-decoration: none;}
+li { list-style: none;}
+img { border: 0 none; vertical-align: middle;}
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clearfix {
+	*zoom: 1;
+}
